@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{%block title%}
+Mentor
+{% endblock%}
+
+{% block content %}
+<style>
+    .mentor-container {
+        background-color: #0dcaf0;
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+    .mentor-card {
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        background: rgb(249, 247, 215);
+        height: 100%;
+    }
+    .mentor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .mentor-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        padding: 15px;
+        border-radius: 25px;
+    }
+    .mentor-name {
+        font-weight: 700;
+        color: #333;
+    }
+    .mentor-spec {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    .subject-tag {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #007bff;
+        letter-spacing: 1px;
+    }
+</style>
+
+<div class="container">
+    <h1 class="text-center display-4 mb-4 fw-bold">Your Perfect Mentor</h1>
+
+    <div class="mentor-container container">
+        <div class="row g-4 justify-content-center">
+            {% for d in mentor %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="mentor-card text-center p-3">
+                    <img src="{{ d.men_image.url }}" class="mentor-img" alt="{{ d.men_name }}">
+                    <div class="card-body">
+                        <h4 class="mentor-name">{{ d.men_name }}</h4>
+                        <p class="mentor-spec mb-1">{{ d.men_spec }}</p>
+                        <h6 class="subject-tag">subject: {{ d.sub_name }}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

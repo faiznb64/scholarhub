@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{%block title%}
+Home 
+{% endblock%}
+
+{% block content%}
+
+<style>
+  .how-it-works-section .step-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #0d6efd; 
+    color: #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.15);
+  }
+  .how-it-works-section h5 {
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .how-it-works-section p {
+    line-height: 1.5;
+  }
+
+.better-way{
+  background: rgb(64, 189, 206);
+}
+
+.box{
+  background-color: #b5dbf8;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+.feature-card {
+    background-color: #b5dbf8; 
+    border-radius: 12px;
+    border: none;
+    text-align: left; 
+    transition: transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    font-size: 1.8rem;
+    color: #0d6efd; 
+}
+
+.feature-card h5 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+</style>
+{% load static %}
+
+<div id="carouselExampleDark" class=" container mt-5 carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="{% static '/images/1project.jpg'%}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static '/images/2project.jpg'%}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static '/images/3project.jpg'%}" class="d-block w-100" alt="...">
+        
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<br><br>
+
+<section class="how-it-works-section py-5 bg-light m-2">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">How Scholar Hub Works</h2>
+        <p class="text-muted mb-5 mx-auto" style="max-width: 800px;">
+            Getting started with Scholar Hub is easy. Our platform is designed to connect you with the right mentor in just a few simple steps.
+        </p>
+
+        <div class="row g-4">
+            <div class=" box col-md-3">
+                <div class="step-circle mb-3">01</div>
+                <h5 class="fw-bold">Find Your Ideal Mentor</h5>
+                <p class="small text-muted">Browse our extensive network of verified mentors, filter by subject, expertise, and availability to find your perfect match.</p>
+            </div>
+
+            <div class=" box col-md-3">
+                <div class="step-circle mb-3">02</div>
+                <h5 class="fw-bold">Schedule a Session</h5>
+                <p class="small text-muted">Book a one-on-one or group session with your chosen mentor at a time that works for you using our calendar system.</p>
+            </div>
+
+            <div class="box col-md-3">
+                <div class="step-circle mb-3">03</div>
+                <h5 class="fw-bold">Connect and Learn</h5>
+                <p class="small text-muted">Meet with your mentor via our platform for personalized guidance, homework help, or exam preparation.</p>
+            </div>
+
+            <div class="box col-md-3">
+                <div class="step-circle mb-3">04</div>
+                <h5 class="fw-bold">Track Your Progress</h5>
+                <p class="small text-muted">Review session notes, complete assignments, and monitor your improvement through our dashboard.</p>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <a href="{% url 'about' %}" class="text-dark fw-bold border-bottom border-dark pb-1 text-decoration-none">
+                Learn More About Our Process
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class=" py-5 bg-light">
+    <div class=" better-way text-center mx-5 p-2 pb-5 rounded-circle pt-5">
+        <h2 class="fw-bold mb-3">A Better Way to Learn and Grow</h2>
+        <p class="text-muted mb-5 mx-auto" style="max-width: 600px;">
+            Scholar Hub offers a comprehensive platform designed to help students excel academically and develop personally.
+        </p>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-bell"></i>
+                    </div>
+                    <h5 class="fw-bold">Personalized Learning</h5>
+                    <p class="text-muted">Our mentors create custom learning plans tailored to your specific learning style and goals.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5 class="fw-bold">Verified Experts</h5>
+                    <p class="text-muted">All our mentors undergo a rigorous verification process to ensure they are qualified and experienced.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+                    <h5 class="fw-bold">Flexible Scheduling</h5>
+                    <p class="text-muted">Book sessions when it works for you with our easy-to-use calendar and scheduling system.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-chat-left-text"></i>
+                    </div>
+                    <h5 class="fw-bold">Real-Time Feedback</h5>
+                    <p class="text-muted">Get instant feedback during sessions and detailed follow-ups to track your progress.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h5 class="fw-bold">Group Sessions</h5>
+                    <p class="text-muted">Learn collaboratively with others in small-group sessions that foster peer learning at a reduced cost.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4">
+                    <div class="icon-box mb-3">
+                        <i class="bi bi-send"></i>
+                    </div>
+                    <h5 class="fw-bold">Goal Tracking</h5>
+                    <p class="text-muted">Set academic goals and track your progress with our intuitive dashboard and reporting tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+
+{% endblock%}
